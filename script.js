@@ -29,9 +29,11 @@ const gamePlay = (function createGameboard() {
     if (xTurn === true) {
       console.log("it is now the turn of player o");
       xTurn = false;
+      document.getElementById("player-on-turn").innerHTML = "Player O turn";
     } else {
       console.log("it is now the turn of player x");
       xTurn = true;
+      document.getElementById("player-on-turn").innerHTML = "Player X turn";
     }
   };
 
@@ -55,6 +57,7 @@ const gamePlay = (function createGameboard() {
       //stops the game if someone has won
       if (foundWinner === true) {
         console.log("Game Over");
+        document.getElementById("game-over").innerHTML = "GAME OVER";
       } else {
         turnNumber++;
         whoTurn();
@@ -67,9 +70,11 @@ const gamePlay = (function createGameboard() {
   const winnerIs = () => {
     if (xTurn === true) {
       console.log("Player x has won");
+      document.getElementById("player-on-turn").innerHTML = "Player X has won";
       foundWinner = true;
     } else {
       console.log("Player o has won");
+      document.getElementById("player-on-turn").innerHTML = "Player O has won";
       foundWinner = true;
     }
   };
@@ -118,9 +123,10 @@ const gamePlay = (function createGameboard() {
       console.log("diagonal win");
       winnerIs();
       foundWinner = true;
-    } else if (turnNumber === 8) {
+    } else if (turnNumber === 9) {
       //check for tie
       console.log("it is a tie");
+      document.getElementById("player-on-turn").innerHTML = "It is a tie";
       foundWinner = true;
     }
   };
@@ -138,7 +144,6 @@ const gamePlay = (function createGameboard() {
 })();
 
 //NEXT STEPS
-//display which player is on turn
 //restart game button
 //allow players to be named
 //style it
