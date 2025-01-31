@@ -1,0 +1,23 @@
+/*LAYOUT*/
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.game-square {
+  border: 1px solid black;
+  height: 100px;
+  width: 100px;
+}

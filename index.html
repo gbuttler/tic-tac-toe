@@ -4,8 +4,65 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div class="game-container">
+      <h1 class="title">Tic Tac Toe</h1>
+      <div class="game-grid">
+        <div
+          class="game-square"
+          id="square-zero"
+          onclick="gamePlay.playTurn(0)"
+        >
+          0
+        </div>
+        <div class="game-square" id="square-one" onclick="gamePlay.playTurn(1)">
+          1
+        </div>
+        <div class="game-square" id="square-two" onclick="gamePlay.playTurn(2)">
+          2
+        </div>
+        <div
+          class="game-square"
+          id="square-three"
+          onclick="gamePlay.playTurn(3)"
+        >
+          3
+        </div>
+        <div
+          class="game-square"
+          id="square-four"
+          onclick="gamePlay.playTurn(4)"
+        >
+          4
+        </div>
+        <div
+          class="game-square"
+          id="square-five"
+          onclick="gamePlay.playTurn(5)"
+        >
+          5
+        </div>
+        <div class="game-square" id="square-six" onclick="gamePlay.playTurn(6)">
+          6
+        </div>
+        <div
+          class="game-square"
+          id="square-seven"
+          onclick="gamePlay.playTurn(7)"
+        >
+          7
+        </div>
+        <div
+          class="game-square"
+          id="square-eight"
+          onclick="gamePlay.playTurn(8)"
+        >
+          8
+        </div>
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
