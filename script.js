@@ -21,6 +21,9 @@ const gamePlay = (function createGameboard() {
   //check if there is a winner
   let foundWinner = false;
 
+  //assign standard text to print to HTML
+  let cellText = "X";
+
   //alternates whose turn it is
   const whoTurn = () => {
     if (xTurn === true) {
@@ -39,11 +42,13 @@ const gamePlay = (function createGameboard() {
     } else {
       b = "o";
     }
+
     //if statement to stop cells overlapping
     if (displayBoard[a] !== " ") {
       console.log("Please choose another square");
     } else {
       displayBoard[a] = b;
+      // printMarker();
       showBoard();
       checkWin();
 
@@ -120,8 +125,20 @@ const gamePlay = (function createGameboard() {
     }
   };
 
-  return { showBoard, playTurn, whoTurn, checkWin };
+  const playAt = (i) => {
+    //update game state
+    playTurn(i);
+    //update html board
+    const squareText = displayBoard[i]; //to write
+    const squareNumber = document.getElementById(`square-${i}`);
+    squareNumber.innerHTML = squareText; //either X or O
+  };
+
+  return { showBoard, playTurn, whoTurn, checkWin, playAt };
 })();
 
 //NEXT STEPS
-//check to see if square is empty - no overwriting allowed
+//display which player is on turn
+//restart game button
+//allow players to be named
+//style it
